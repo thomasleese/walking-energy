@@ -23,7 +23,6 @@ class ViewController: UIViewController {
     ]
 
     let healthDataToRead: Set<HKQuantityType> = [
-        HKObjectType.quantityType(forIdentifier: .stepCount)!,
         HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
         HKObjectType.quantityType(forIdentifier: .bodyMass)!,
     ]

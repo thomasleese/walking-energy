@@ -33,10 +33,11 @@ class EnergyCalculator {
         alreadyCalculating = true
         print("Calculating new energy!")
 
-        let query = HKAnchoredObjectQuery(type: distanceWalkingRunning, predicate: nil, anchor: self.anchor, limit: HKObjectQueryNoLimit) { (query, newSamples, deletedSamples, newAnchor, error) -> Void in
+        let predicate = HKQuery.predicateForObjects(from: [HKDevice.local()])
+
+        let query = HKAnchoredObjectQuery(type: distanceWalkingRunning, predicate: predicate, anchor: self.anchor, limit: HKObjectQueryNoLimit) { (query, newSamples, deletedSamples, newAnchor, error) -> Void in
 
             guard let samples = newSamples as? [HKQuantitySample], let deleted = deletedSamples else {
-                // Add proper error handling here...
                 print("Unable to query for step counts: \(error?.localizedDescription) ***")
                 self.alreadyCalculating = false
                 return
@@ -47,6 +48,8 @@ class EnergyCalculator {
             for sample in samples {
                 self.handleStepCountAdded(sample)
             }
+
+            print(samples.count)
 
             for deletedSample in deleted {
                 self.handleStepCountDeleted(deletedSample)
@@ -59,17 +62,19 @@ class EnergyCalculator {
     }
 
     func handleStepCountAdded(_ sample: HKQuantitySample) {
-        let distance = sample.quantity.doubleValue(for: HKUnit.meter())
-        let time = sample.endDate.timeIntervalSince(sample.startDate)
-        guard time > 0 else {
+        let distance = sample.quantity.doubleValue(for: HKUnit.meterUnit(with: .kilo))
+        let seconds = sample.endDate.timeIntervalSince(sample.startDate)
+        guard seconds > 0 else {
             print("No time!")
             return
         }
 
+        let hours = seconds / 60.0 / 60.0
+
         getBodyMass(when: sample.endDate) { (weight) in
             if let weight = weight {
-                let energy = self.calculateEnergy(distance: distance, weight: weight, time: time)
-                self.recordEnergySample(energy: energy, originalSample: sample)
+                let energy = self.calculateEnergy(distance: distance, weight: weight, hours: hours)
+                self.saveHealthKitSample(activeEnergy: energy, originalSample: sample)
             }
         }
     }
@@ -102,10 +107,10 @@ class EnergyCalculator {
 
     }
 
-    func calculateEnergy(distance: Double, weight: Double, time: Double) -> Double {
-        let speed = distance / time
+    func calculateEnergy(distance: Double, weight: Double, hours: Double) -> Double {
+        let speed = distance / hours
         let met = 1.0374071958881 + 0.46687607081667 * speed
-        return met * weight * time
+        return met * weight * hours
     }
 
     func checkIfEnergyAlreadyRecorded(uuid: UUID, completionHandler: @escaping (Bool?) -> Void) {
@@ -124,7 +129,7 @@ class EnergyCalculator {
         healthStore.execute(query)
     }
 
-    func recordEnergySample(energy: Double, originalSample: HKQuantitySample) {
+    private func saveHealthKitSample(activeEnergy: Double, originalSample: HKQuantitySample) {
         checkIfEnergyAlreadyRecorded(uuid: originalSample.uuid) { alreadyExists in
             guard let alreadyExists = alreadyExists else {
                 return
@@ -134,17 +139,8 @@ class EnergyCalculator {
                 return
             }
 
-            let quantity = HKQuantity(unit: HKUnit.kilocalorie(), doubleValue: energy)
-
-            let sample = HKQuantitySample(
-                type: self.activeEnergyBurned,
-                quantity: quantity,
-                start: originalSample.startDate,
-                end: originalSample.endDate,
-                device: originalSample.device,
-                metadata: [
-                    HKMetadataKeyExternalUUID: originalSample.uuid.uuidString,
-                ]
+            let sample = self.buildHealthKitSample(
+                activeEnergy: activeEnergy, originalSample: originalSample
             )
 
             self.healthStore.save(sample) { (success, error) in
@@ -153,6 +149,24 @@ class EnergyCalculator {
                 }
             }
         }
+    }
+
+    private func buildHealthKitSample(activeEnergy: Double, originalSample: HKQuantitySample) -> HKQuantitySample {
+        let quantity = HKQuantity(
+            unit: HKUnit.kilocalorie(),
+            doubleValue: activeEnergy
+        )
+
+        return HKQuantitySample(
+            type: self.activeEnergyBurned,
+            quantity: quantity,
+            start: originalSample.startDate,
+            end: originalSample.endDate,
+            device: originalSample.device,
+            metadata: [
+                HKMetadataKeyExternalUUID: originalSample.uuid.uuidString,
+            ]
+        )
     }
 
 }

@@ -28,8 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             query, completionHandler, error in
 
             if let error = error {
-                print("Error! \(error.localizedDescription)")
-                abort()
+                switch error {
+                case HKError.errorAuthorizationNotDetermined:
+                    return
+                default:
+                    fatalError("Unknown error: \(error)")
+                }
             }
 
             print("Got some data!")
