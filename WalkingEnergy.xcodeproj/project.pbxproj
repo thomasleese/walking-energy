@@ -15,6 +15,7 @@
 		5D25FEBB1F027C55001A1217 /* WalkingEnergyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D25FEBA1F027C55001A1217 /* WalkingEnergyTests.swift */; };
 		5D25FEC61F027C55001A1217 /* WalkingEnergyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D25FEC51F027C55001A1217 /* WalkingEnergyUITests.swift */; };
 		5D25FED61F027D11001A1217 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D25FED51F027D11001A1217 /* HealthKit.framework */; };
+		5D25FED81F0289DF001A1217 /* EnergyCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D25FED71F0289DF001A1217 /* EnergyCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		5D25FEC71F027C55001A1217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D25FED31F027D11001A1217 /* WalkingEnergy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WalkingEnergy.entitlements; sourceTree = "<group>"; };
 		5D25FED51F027D11001A1217 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		5D25FED71F0289DF001A1217 /* EnergyCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergyCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				5D25FEAC1F027C55001A1217 /* Assets.xcassets */,
 				5D25FEAE1F027C55001A1217 /* LaunchScreen.storyboard */,
 				5D25FEB11F027C55001A1217 /* Info.plist */,
+				5D25FED71F0289DF001A1217 /* EnergyCalculator.swift */,
 			);
 			path = WalkingEnergy;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D25FEA81F027C55001A1217 /* ViewController.swift in Sources */,
+				5D25FED81F0289DF001A1217 /* EnergyCalculator.swift in Sources */,
 				5D25FEA61F027C55001A1217 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

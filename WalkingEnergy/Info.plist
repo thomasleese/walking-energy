@@ -35,6 +35,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSHealthShareUsageDescription</key>
+	<string>To calculate your energy used while walking and running.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>To calculate your energy used while walking and running.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
