@@ -34,15 +34,12 @@ class ViewController: UIViewController {
             return
         }
 
-        healthStore.requestAuthorization(toShare: healthDataToWrite, read: healthDataToRead) { (success, error) in
+        healthStore.requestAuthorization(toShare: healthDataToWrite, read: healthDataToRead) { success, error in
 
-            let stepCount = HKObjectType.quantityType(forIdentifier: .stepCount)!
-
-            self.healthStore.enableBackgroundDelivery(for: stepCount, frequency: .immediate) { (success, error) in
+            self.healthStore.enableBackgroundDelivery(for: EnergyCalculator.distanceWalkingRunning, frequency: .immediate) { success, error in
                 print("Background delivery enabled!")
             }
         }
     }
 
 }
-

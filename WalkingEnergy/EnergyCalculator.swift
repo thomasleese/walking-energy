@@ -16,9 +16,9 @@ class EnergyCalculator {
 
     var anchor: HKQueryAnchor? = nil
 
-    let activeEnergyBurned = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!
-    let bodyMass = HKObjectType.quantityType(forIdentifier: .bodyMass)!
-    let distanceWalkingRunning = HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!
+    static let activeEnergyBurned = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!
+    static let bodyMass = HKObjectType.quantityType(forIdentifier: .bodyMass)!
+    static let distanceWalkingRunning = HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!
 
     init(healthStore: HKHealthStore) {
         self.healthStore = healthStore
@@ -31,12 +31,10 @@ class EnergyCalculator {
         }
 
         alreadyCalculating = true
-        print("Calculating new energy!")
 
         let predicate = HKQuery.predicateForObjects(from: [HKDevice.local()])
 
-        let query = HKAnchoredObjectQuery(type: distanceWalkingRunning, predicate: predicate, anchor: self.anchor, limit: HKObjectQueryNoLimit) { (query, newSamples, deletedSamples, newAnchor, error) -> Void in
-
+        let query = HKAnchoredObjectQuery(type: EnergyCalculator.distanceWalkingRunning, predicate: predicate, anchor: self.anchor, limit: HKObjectQueryNoLimit) { query, newSamples, deletedSamples, newAnchor, error in
             guard let samples = newSamples as? [HKQuantitySample], let deleted = deletedSamples else {
                 print("Unable to query for step counts: \(error?.localizedDescription) ***")
                 self.alreadyCalculating = false
@@ -64,6 +62,7 @@ class EnergyCalculator {
     func handleStepCountAdded(_ sample: HKQuantitySample) {
         let distance = sample.quantity.doubleValue(for: HKUnit.meterUnit(with: .kilo))
         let seconds = sample.endDate.timeIntervalSince(sample.startDate)
+
         guard seconds > 0 else {
             print("No time!")
             return
@@ -71,7 +70,7 @@ class EnergyCalculator {
 
         let hours = seconds / 60.0 / 60.0
 
-        getBodyMass(when: sample.endDate) { (weight) in
+        getBodyMass(when: sample.endDate) { weight in
             if let weight = weight {
                 let energy = self.calculateEnergy(distance: distance, weight: weight, hours: hours)
                 self.saveHealthKitSample(activeEnergy: energy, originalSample: sample)
@@ -87,8 +86,7 @@ class EnergyCalculator {
             withStart: startDate, end: endDate
         )
 
-        let query = HKStatisticsQuery(quantityType: bodyMass, quantitySamplePredicate: predicate, options: .discreteAverage) { query, result, error in
-
+        let query = HKStatisticsQuery(quantityType: EnergyCalculator.bodyMass, quantitySamplePredicate: predicate, options: .discreteAverage) { query, result, error in
             guard let result = result else {
                 completionHandler(nil)
                 return
@@ -116,8 +114,7 @@ class EnergyCalculator {
     func checkIfEnergyAlreadyRecorded(uuid: UUID, completionHandler: @escaping (Bool?) -> Void) {
         let predicate = HKQuery.predicateForObjects(withMetadataKey: HKMetadataKeyExternalUUID, allowedValues: [uuid.uuidString])
 
-        let query = HKSampleQuery(sampleType: activeEnergyBurned, predicate: predicate, limit: 1, sortDescriptors: nil) { query, results, error in
-
+        let query = HKSampleQuery(sampleType: EnergyCalculator.activeEnergyBurned, predicate: predicate, limit: 1, sortDescriptors: nil) { query, results, error in
             guard let results = results else {
                 print("Error: \(error?.localizedDescription)")
                 return completionHandler(nil)
@@ -158,7 +155,7 @@ class EnergyCalculator {
         )
 
         return HKQuantitySample(
-            type: self.activeEnergyBurned,
+            type: EnergyCalculator.activeEnergyBurned,
             quantity: quantity,
             start: originalSample.startDate,
             end: originalSample.endDate,

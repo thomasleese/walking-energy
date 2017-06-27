@@ -36,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5D25FEA21F027C55001A1217 /* WalkingEnergy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkingEnergy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D25FEA21F027C55001A1217 /* Walking Energy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Walking Energy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D25FEA51F027C55001A1217 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D25FEA71F027C55001A1217 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5D25FEAA1F027C55001A1217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 		5D25FEA31F027C55001A1217 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5D25FEA21F027C55001A1217 /* WalkingEnergy.app */,
+				5D25FEA21F027C55001A1217 /* Walking Energy.app */,
 				5D25FEB61F027C55001A1217 /* WalkingEnergyTests.xctest */,
 				5D25FEC11F027C55001A1217 /* WalkingEnergyUITests.xctest */,
 			);
@@ -159,7 +159,7 @@
 			);
 			name = WalkingEnergy;
 			productName = WalkingEnergy;
-			productReference = 5D25FEA21F027C55001A1217 /* WalkingEnergy.app */;
+			productReference = 5D25FEA21F027C55001A1217 /* Walking Energy.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5D25FEB51F027C55001A1217 /* WalkingEnergyTests */ = {
@@ -443,7 +443,7 @@
 				INFOPLIST_FILE = WalkingEnergy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = thomasleese.WalkingEnergy;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Walking Energy";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -457,7 +457,7 @@
 				INFOPLIST_FILE = WalkingEnergy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = thomasleese.WalkingEnergy;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Walking Energy";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

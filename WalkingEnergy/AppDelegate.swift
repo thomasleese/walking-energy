@@ -21,16 +21,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        observeHealthKit()
+        energyCalculator.calculate()
 
-        let stepCount = HKObjectType.quantityType(forIdentifier: .stepCount)!
+        return true
+    }
 
-        let query = HKObserverQuery(sampleType: stepCount, predicate: nil) {
-            query, completionHandler, error in
+    private func observeHealthKit() {
+        let query = HKObserverQuery(sampleType: EnergyCalculator.distanceWalkingRunning, predicate: nil) { query, completionHandler, error in
 
             if let error = error {
                 switch error {
                 case HKError.errorAuthorizationNotDetermined:
                     return
+
                 default:
                     fatalError("Unknown error: \(error)")
                 }
@@ -44,9 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         healthStore.execute(query)
-        energyCalculator.calculate()
-
-        return true
     }
 
 }
