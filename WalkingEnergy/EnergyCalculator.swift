@@ -79,7 +79,7 @@ class EnergyCalculator {
     }
 
     func getBodyMass(when date: Date, completionHandler: @escaping (Double?) -> Void) {
-        let startDate = date.addingTimeInterval(-1 * 24 * 60 * 60)
+        let startDate = date.addingTimeInterval(-7 * 24 * 60 * 60)
         let endDate = date.addingTimeInterval(7 * 24 * 60 * 60)
 
         let predicate = HKQuery.predicateForSamples(
@@ -87,10 +87,18 @@ class EnergyCalculator {
         )
 
         let query = HKStatisticsQuery(quantityType: EnergyCalculator.bodyMass, quantitySamplePredicate: predicate, options: .discreteAverage) { query, result, error in
+            if let error = error {
+                print("Error! \(error)")
+                completionHandler(nil)
+                return
+            }
+            
             guard let result = result else {
                 completionHandler(nil)
                 return
             }
+
+            print("Result: \(result)")
 
             let quantity = result.averageQuantity()!
             let weight = quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
