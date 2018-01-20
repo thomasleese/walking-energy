@@ -36,7 +36,7 @@ class EnergyCalculator {
 
         let query = HKAnchoredObjectQuery(type: EnergyCalculator.distanceWalkingRunning, predicate: predicate, anchor: self.anchor, limit: HKObjectQueryNoLimit) { query, newSamples, deletedSamples, newAnchor, error in
             guard let samples = newSamples as? [HKQuantitySample], let deleted = deletedSamples else {
-                print("Unable to query for step counts: \(error?.localizedDescription) ***")
+                print("Unable to query for step counts: \(error?.localizedDescription ?? "unknown") ***")
                 self.alreadyCalculating = false
                 return
             }
@@ -124,7 +124,7 @@ class EnergyCalculator {
 
         let query = HKSampleQuery(sampleType: EnergyCalculator.activeEnergyBurned, predicate: predicate, limit: 1, sortDescriptors: nil) { query, results, error in
             guard let results = results else {
-                print("Error: \(error?.localizedDescription)")
+                print("Error: \(error?.localizedDescription ?? "unknown")")
                 return completionHandler(nil)
             }
 
