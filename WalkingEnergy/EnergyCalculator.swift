@@ -79,8 +79,8 @@ class EnergyCalculator {
     }
 
     func getBodyMass(when date: Date, completionHandler: @escaping (Double?) -> Void) {
-        let startDate = date.addingTimeInterval(-7 * 24 * 60 * 60)
-        let endDate = date.addingTimeInterval(7 * 24 * 60 * 60)
+        let startDate = date.addingTimeInterval(-14 * 24 * 60 * 60)
+        let endDate = date.addingTimeInterval(24 * 60 * 60)
 
         let predicate = HKQuery.predicateForSamples(
             withStart: startDate, end: endDate
