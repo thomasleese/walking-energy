@@ -12,28 +12,9 @@
 		5D25FEAB1F027C55001A1217 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D25FEA91F027C55001A1217 /* Main.storyboard */; };
 		5D25FEAD1F027C55001A1217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D25FEAC1F027C55001A1217 /* Assets.xcassets */; };
 		5D25FEB01F027C55001A1217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D25FEAE1F027C55001A1217 /* LaunchScreen.storyboard */; };
-		5D25FEBB1F027C55001A1217 /* WalkingEnergyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D25FEBA1F027C55001A1217 /* WalkingEnergyTests.swift */; };
-		5D25FEC61F027C55001A1217 /* WalkingEnergyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D25FEC51F027C55001A1217 /* WalkingEnergyUITests.swift */; };
 		5D25FED61F027D11001A1217 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D25FED51F027D11001A1217 /* HealthKit.framework */; };
 		5D25FED81F0289DF001A1217 /* EnergyCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D25FED71F0289DF001A1217 /* EnergyCalculator.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5D25FEB71F027C55001A1217 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D25FE9A1F027C55001A1217 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5D25FEA11F027C55001A1217;
-			remoteInfo = WalkingEnergy;
-		};
-		5D25FEC21F027C55001A1217 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D25FE9A1F027C55001A1217 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5D25FEA11F027C55001A1217;
-			remoteInfo = WalkingEnergy;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5D25FEA21F027C55001A1217 /* Walking Energy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Walking Energy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,12 +24,6 @@
 		5D25FEAC1F027C55001A1217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D25FEAF1F027C55001A1217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D25FEB11F027C55001A1217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D25FEB61F027C55001A1217 /* WalkingEnergyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkingEnergyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D25FEBA1F027C55001A1217 /* WalkingEnergyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingEnergyTests.swift; sourceTree = "<group>"; };
-		5D25FEBC1F027C55001A1217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D25FEC11F027C55001A1217 /* WalkingEnergyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalkingEnergyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D25FEC51F027C55001A1217 /* WalkingEnergyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingEnergyUITests.swift; sourceTree = "<group>"; };
-		5D25FEC71F027C55001A1217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D25FED31F027D11001A1217 /* WalkingEnergy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WalkingEnergy.entitlements; sourceTree = "<group>"; };
 		5D25FED51F027D11001A1217 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		5D25FED71F0289DF001A1217 /* EnergyCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergyCalculator.swift; sourceTree = "<group>"; };
@@ -63,20 +38,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D25FEB31F027C55001A1217 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5D25FEBE1F027C55001A1217 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,8 +45,6 @@
 			isa = PBXGroup;
 			children = (
 				5D25FEA41F027C55001A1217 /* WalkingEnergy */,
-				5D25FEB91F027C55001A1217 /* WalkingEnergyTests */,
-				5D25FEC41F027C55001A1217 /* WalkingEnergyUITests */,
 				5D25FEA31F027C55001A1217 /* Products */,
 				5D25FED41F027D11001A1217 /* Frameworks */,
 			);
@@ -95,8 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				5D25FEA21F027C55001A1217 /* Walking Energy.app */,
-				5D25FEB61F027C55001A1217 /* WalkingEnergyTests.xctest */,
-				5D25FEC11F027C55001A1217 /* WalkingEnergyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,31 +64,13 @@
 				5D25FED31F027D11001A1217 /* WalkingEnergy.entitlements */,
 				5D25FEA51F027C55001A1217 /* AppDelegate.swift */,
 				5D25FEA71F027C55001A1217 /* ViewController.swift */,
+				5D25FED71F0289DF001A1217 /* EnergyCalculator.swift */,
+				5D25FEAE1F027C55001A1217 /* LaunchScreen.storyboard */,
 				5D25FEA91F027C55001A1217 /* Main.storyboard */,
 				5D25FEAC1F027C55001A1217 /* Assets.xcassets */,
-				5D25FEAE1F027C55001A1217 /* LaunchScreen.storyboard */,
 				5D25FEB11F027C55001A1217 /* Info.plist */,
-				5D25FED71F0289DF001A1217 /* EnergyCalculator.swift */,
 			);
 			path = WalkingEnergy;
-			sourceTree = "<group>";
-		};
-		5D25FEB91F027C55001A1217 /* WalkingEnergyTests */ = {
-			isa = PBXGroup;
-			children = (
-				5D25FEBA1F027C55001A1217 /* WalkingEnergyTests.swift */,
-				5D25FEBC1F027C55001A1217 /* Info.plist */,
-			);
-			path = WalkingEnergyTests;
-			sourceTree = "<group>";
-		};
-		5D25FEC41F027C55001A1217 /* WalkingEnergyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5D25FEC51F027C55001A1217 /* WalkingEnergyUITests.swift */,
-				5D25FEC71F027C55001A1217 /* Info.plist */,
-			);
-			path = WalkingEnergyUITests;
 			sourceTree = "<group>";
 		};
 		5D25FED41F027D11001A1217 /* Frameworks */ = {
@@ -145,9 +84,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5D25FEA11F027C55001A1217 /* WalkingEnergy */ = {
+		5D25FEA11F027C55001A1217 /* Walking Energy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5D25FECA1F027C55001A1217 /* Build configuration list for PBXNativeTarget "WalkingEnergy" */;
+			buildConfigurationList = 5D25FECA1F027C55001A1217 /* Build configuration list for PBXNativeTarget "Walking Energy" */;
 			buildPhases = (
 				5D25FE9E1F027C55001A1217 /* Sources */,
 				5D25FE9F1F027C55001A1217 /* Frameworks */,
@@ -157,46 +96,10 @@
 			);
 			dependencies = (
 			);
-			name = WalkingEnergy;
+			name = "Walking Energy";
 			productName = WalkingEnergy;
 			productReference = 5D25FEA21F027C55001A1217 /* Walking Energy.app */;
 			productType = "com.apple.product-type.application";
-		};
-		5D25FEB51F027C55001A1217 /* WalkingEnergyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5D25FECD1F027C55001A1217 /* Build configuration list for PBXNativeTarget "WalkingEnergyTests" */;
-			buildPhases = (
-				5D25FEB21F027C55001A1217 /* Sources */,
-				5D25FEB31F027C55001A1217 /* Frameworks */,
-				5D25FEB41F027C55001A1217 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5D25FEB81F027C55001A1217 /* PBXTargetDependency */,
-			);
-			name = WalkingEnergyTests;
-			productName = WalkingEnergyTests;
-			productReference = 5D25FEB61F027C55001A1217 /* WalkingEnergyTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		5D25FEC01F027C55001A1217 /* WalkingEnergyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5D25FED01F027C55001A1217 /* Build configuration list for PBXNativeTarget "WalkingEnergyUITests" */;
-			buildPhases = (
-				5D25FEBD1F027C55001A1217 /* Sources */,
-				5D25FEBE1F027C55001A1217 /* Frameworks */,
-				5D25FEBF1F027C55001A1217 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5D25FEC31F027C55001A1217 /* PBXTargetDependency */,
-			);
-			name = WalkingEnergyUITests;
-			productName = WalkingEnergyUITests;
-			productReference = 5D25FEC11F027C55001A1217 /* WalkingEnergyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -205,12 +108,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Thomas Leese";
 				TargetAttributes = {
 					5D25FEA11F027C55001A1217 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = R6UQ555W54;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
@@ -218,19 +122,9 @@
 							};
 						};
 					};
-					5D25FEB51F027C55001A1217 = {
-						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 5D25FEA11F027C55001A1217;
-					};
-					5D25FEC01F027C55001A1217 = {
-						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 5D25FEA11F027C55001A1217;
-					};
 				};
 			};
-			buildConfigurationList = 5D25FE9D1F027C55001A1217 /* Build configuration list for PBXProject "WalkingEnergy" */;
+			buildConfigurationList = 5D25FE9D1F027C55001A1217 /* Build configuration list for PBXProject "Walking Energy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -243,9 +137,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5D25FEA11F027C55001A1217 /* WalkingEnergy */,
-				5D25FEB51F027C55001A1217 /* WalkingEnergyTests */,
-				5D25FEC01F027C55001A1217 /* WalkingEnergyUITests */,
+				5D25FEA11F027C55001A1217 /* Walking Energy */,
 			);
 		};
 /* End PBXProject section */
@@ -258,20 +150,6 @@
 				5D25FEB01F027C55001A1217 /* LaunchScreen.storyboard in Resources */,
 				5D25FEAD1F027C55001A1217 /* Assets.xcassets in Resources */,
 				5D25FEAB1F027C55001A1217 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5D25FEB41F027C55001A1217 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5D25FEBF1F027C55001A1217 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,36 +166,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D25FEB21F027C55001A1217 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5D25FEBB1F027C55001A1217 /* WalkingEnergyTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5D25FEBD1F027C55001A1217 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5D25FEC61F027C55001A1217 /* WalkingEnergyUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5D25FEB81F027C55001A1217 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5D25FEA11F027C55001A1217 /* WalkingEnergy */;
-			targetProxy = 5D25FEB71F027C55001A1217 /* PBXContainerItemProxy */;
-		};
-		5D25FEC31F027C55001A1217 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5D25FEA11F027C55001A1217 /* WalkingEnergy */;
-			targetProxy = 5D25FEC21F027C55001A1217 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5D25FEA91F027C55001A1217 /* Main.storyboard */ = {
@@ -352,6 +201,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -359,6 +209,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -409,6 +260,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -416,6 +268,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -456,7 +309,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = thomasleese.WalkingEnergy;
 				PRODUCT_NAME = "Walking Energy";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -470,68 +324,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = thomasleese.WalkingEnergy;
 				PRODUCT_NAME = "Walking Energy";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		5D25FECE1F027C55001A1217 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = WalkingEnergyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = thomasleese.WalkingEnergyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkingEnergy.app/WalkingEnergy";
-			};
-			name = Debug;
-		};
-		5D25FECF1F027C55001A1217 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = WalkingEnergyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = thomasleese.WalkingEnergyTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalkingEnergy.app/WalkingEnergy";
-			};
-			name = Release;
-		};
-		5D25FED11F027C55001A1217 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = WalkingEnergyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = thomasleese.WalkingEnergyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = WalkingEnergy;
-			};
-			name = Debug;
-		};
-		5D25FED21F027C55001A1217 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = WalkingEnergyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = thomasleese.WalkingEnergyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = WalkingEnergy;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5D25FE9D1F027C55001A1217 /* Build configuration list for PBXProject "WalkingEnergy" */ = {
+		5D25FE9D1F027C55001A1217 /* Build configuration list for PBXProject "Walking Energy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5D25FEC81F027C55001A1217 /* Debug */,
@@ -540,29 +341,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5D25FECA1F027C55001A1217 /* Build configuration list for PBXNativeTarget "WalkingEnergy" */ = {
+		5D25FECA1F027C55001A1217 /* Build configuration list for PBXNativeTarget "Walking Energy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5D25FECB1F027C55001A1217 /* Debug */,
 				5D25FECC1F027C55001A1217 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5D25FECD1F027C55001A1217 /* Build configuration list for PBXNativeTarget "WalkingEnergyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5D25FECE1F027C55001A1217 /* Debug */,
-				5D25FECF1F027C55001A1217 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5D25FED01F027C55001A1217 /* Build configuration list for PBXNativeTarget "WalkingEnergyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5D25FED11F027C55001A1217 /* Debug */,
-				5D25FED21F027C55001A1217 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
