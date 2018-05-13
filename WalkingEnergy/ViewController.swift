@@ -11,12 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var healthStore: HKHealthStore {
-        get {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            return appDelegate.healthStore
-        }
-    }
+    let healthStore = HKHealthStore()
 
     let healthDataToWrite: Set<HKQuantityType> = [
         HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
